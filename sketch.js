@@ -12,7 +12,7 @@ var ball = {
 
 function setup() {
     createCanvas(640, 480);
-    textSize(28)
+    textSize(12)
     
     world.startPosition = createVector(300, 50);
     world.startVelocity = createVector(0, 0);
@@ -37,13 +37,10 @@ function draw() {
     stroke(0);
     strokeWeight(2);
     fill(255,127);
-    ellipse(ball.position.x, ball.position.y, 20, 20)
-
+    ellipse(ball.position.x, ball.position.y, 20, 20);
 }
 
 function mouseClicked() {
-    ball.position = world.startPosition.copy();
-    ball.velocity = world.startVelocity.copy();
-    ball.acceleration = world.gravity.copy();
+    ball.velocity.add(createVector(0, -2))
 }
 
